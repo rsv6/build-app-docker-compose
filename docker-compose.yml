@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  nodeapp:
+    image: node:20.9.0
+    container_name: nodeapp
+    volumes:
+      - ./:/usr/src/app
+    working_dir: /usr/src/app
+    command: sh -c 'npm install && npm start'
+    ports:
+      - "8040:8040"
+    environment:
+      - NODE_ENV=production
